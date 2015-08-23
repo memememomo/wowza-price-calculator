@@ -1,0 +1,20 @@
+{
+  "name": "wowza_price_calc",
+  "version": "0.0.0",
+  "authors": [
+    "Uchiko <memememomo@gmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.4",
+    "bootstrap": "~3.3.5",
+    "angular-resource": "~1.4.4"
+  }
+}

@@ -1,0 +1,5 @@
+.idea
+node_modules
+typings
+bower_components
+js/*.js.map

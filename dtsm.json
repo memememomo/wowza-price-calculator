@@ -1,0 +1,23 @@
+{
+  "repos": [
+    {
+      "url": "https://github.com/borisyankov/DefinitelyTyped.git",
+      "ref": "master"
+    }
+  ],
+  "path": "typings",
+  "bundle": "typings/bundle.d.ts",
+  "link": {
+    "npm": {
+      "include": true
+    }
+  },
+  "dependencies": {
+    "angularjs/angular.d.ts": {
+      "ref": "8f081073e6cb416f901b272810d8b04d6e01c9e0"
+    },
+    "angularjs/angular-resource.d.ts": {
+      "ref": "8f081073e6cb416f901b272810d8b04d6e01c9e0"
+    }
+  }
+}

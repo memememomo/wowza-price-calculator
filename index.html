@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html ng-app="Wowza">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <script type="text/javascript" src="/bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css">
+    <script type="text/javascript" src="/js/app.js"></script>
+</head>
+<body>
+<div class="container" ng-controller="WowzaController">
+    <h1>計算</h1>
+
+    <input type="text" name="bps" ng-model="bpsMB"/>Mbps&nbsp;
+
+    <input type="text" name="viewer" ng-model="viewerNum"/>Viewer&nbsp;
+
+    <input type="text" name="event_num" ng-model="eventNum"/>Events&nbsp;
+
+    <button ng-click="calculate()">計算</button>
+
+    <table class="table table-bordered">
+        <tr>
+            <th>Montyly Price</th>
+            <td>${{monthlyPrice}}</td>
+        </tr>
+        <tr>
+            <th>Stream Processing Hours</th>
+            <td>
+                Sum of additional price: ${{streamProcessing.sumAdditionalPrice()}}<br>
+                <br>
+                Sum of Stream Processing Hours: 24(Hours) x {{streamProcessing.eventNum}}(Events) = {{streamProcessing.sumHour()}}(Hours)<br>
+                Additional Stream Processing: 24(Hours) - {{streamProcessing.monthlyHour}}(Hours) = {{streamProcessing.restHour()}}(Hours)<br>
+                <ul ng-repeat="p in streamProcessingPrices">
+                    <li>
+                        ${{p.unitPrice}} x {{p.num}}(Hours) = ${{p.sum()}}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Estimated Network Usage</th>
+            <td>
+                Sum of additional price: ${{networkUsage.sumAdditionalPrice()}}<br>
+                <br>
+                Sum of Network Usage: {{networkUsage.Gbps}}Gbps x {{networkUsage.viewerNum}}(viewers) x 24(Hours) = {{networkUsage.sumUsageGB()}}(GB)<br>
+                Additional Network Usage: {{networkUsage.sumUsageGB()}}(GB) - {{networkUsage.monthlyUsageGB}}(GB) = {{networkUsage.sumAdditionalUsageGB()}}(GB)<br>
+                <ul ng-repeat="p in networkUsagePrices">
+                    <li>
+                        ${{p.unitPrice}} x {{p.num}}(GB) = ${{p.sum()}}
+                    </li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Estimated Monthly Total</th>
+            <td>
+                ${{monthlyTotal}}
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>
