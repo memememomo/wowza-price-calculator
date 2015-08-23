@@ -41,7 +41,7 @@ class StreamProcessing {
         this.monthlyHour = monthlyHour;
         this.discounts = discouts;
     }
-    sumHour() {
+    sumHours() {
         return 24 * this.eventNum;
     }
     processingHours() {

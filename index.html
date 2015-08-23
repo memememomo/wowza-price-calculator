@@ -29,8 +29,8 @@
             <td>
                 Sum of additional price: ${{streamProcessing.sumAdditionalPrice()}}<br>
                 <br>
-                Sum of Stream Processing Hours: 24(Hours) x {{streamProcessing.eventNum}}(Events) = {{streamProcessing.sumHour()}}(Hours)<br>
-                Additional Stream Processing: 24(Hours) - {{streamProcessing.monthlyHour}}(Hours) = {{streamProcessing.restHour()}}(Hours)<br>
+                Sum of Stream Processing Hours: 24(Hours) x {{streamProcessing.eventNum}}(Events) = {{streamProcessing.sumHours()}}(Hours)<br>
+                Additional Stream Processing: 24(Hours) - {{streamProcessing.monthlyHour}}(Hours) = {{streamProcessing.restHours()}}(Hours)<br>
                 <ul ng-repeat="p in streamProcessingPrices">
                     <li>
                         ${{p.unitPrice}} x {{p.num}}(Hours) = ${{p.sum()}}

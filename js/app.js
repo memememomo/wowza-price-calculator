@@ -28,7 +28,7 @@ var StreamProcessing = (function () {
         this.monthlyHour = monthlyHour;
         this.discounts = discouts;
     }
-    StreamProcessing.prototype.sumHour = function () {
+    StreamProcessing.prototype.sumHours = function () {
         return 24 * this.eventNum;
     };
     StreamProcessing.prototype.processingHours = function () {
